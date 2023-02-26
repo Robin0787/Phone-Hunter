@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./Phone_icon.png" type="image/x-icon" />
+    <title>Phone Hunter</title>
+  </head>
+  <body>
+    <section class="w-10/12 mx-auto">
+      <header>
+        <nav
+          class="flex flex-col md:flex-row justify-between items-center py-6 mb-3 gap-3"
+        >
+          <div>
+            <h2 class="text-3xl">Phone Hunter</h2>
+          </div>
+          <div class="flex">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Type here"
+              class="py-2 px-4 border-2 border-purple-900 w-52 focus:px-6 duration-300 rounded-l-md"
+            />
+            <button
+              id="searchBtn"
+              class="text-lg text-white py-2 px-4 bg-purple-900 rounded-r-md focus:ring-2 ring-purple-400 duration-200"
+            >
+              Search
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <!-- Spinners for loading time -->
+        <div id="loadingSpinner" class="flex justify-center hidden">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <section
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        ></section>
+        <!-- Validation message -->
+        <div>
+          <h3 id="noPhoneMsg" class="text-xl hidden text-center py-40">
+            No phone found, Enter a valid phone name!
+          </h3>
+        </div>
+        <div class="mt-10 text-center mb-4">
+          <button
+            id="showAllBtn"
+            class="text-lg text-white py-2 px-4 bg-purple-900 rounded-md focus:ring-2 ring-purple-400 duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Show All
+          </button>
+        </div>
+      </main>
+      <!-- Modal -->
+      <div
+        class="modal fade modal-centered delay-300"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-2xl" id="staticBackdropLabel"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <article
+              id="modal-body"
+              class="modal-body h-auto rounded-md"
+            ></article>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="text-white bg-red-600 px-6 py-2 rounded-md font-semibold"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bootstrap JS CDN -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"
+      ></script>
+      <script src="./script.js"></script>
+    </section>
+  </body>
+</html>
